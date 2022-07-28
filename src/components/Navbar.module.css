@@ -1,0 +1,39 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 5vh auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar h1 {
+  color: var(--color-b);
+  font-family: monospace;
+  font-weight: 800;
+}
+
+.navbar span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar a {
+  cursor: pointer;
+  font-weight: 600;
+  transition-duration: 100ms;
+  transition-property: transform;
+}
+
+.navbar p {
+  display: none;
+}
+
+@media (min-width: 40rem) {
+  .navbar p {
+    display: inline;
+  }
+}

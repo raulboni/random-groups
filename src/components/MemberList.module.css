@@ -1,0 +1,49 @@
+.memberlist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.delete-icon {
+  position: relative;
+  width: auto;
+  height: 20px;
+}
+.delete-icon:hover {
+  filter: invert(10%);
+  transform: scale(1.1);
+}
+
+.random-group {
+  background-color: var(--color-b);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2.5px 5px;
+  color: var(--color-a);
+  height: auto;
+  padding: 2rem;
+  position: relative;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  transition-property: transform, box-shadow;
+  min-width: 7rem;
+}
+
+@media (min-width: 40rem) {
+  .memberlist {
+    max-width: 40vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.random-group h3 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-a);
+}

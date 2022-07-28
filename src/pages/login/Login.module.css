@@ -1,0 +1,11 @@
+.login {
+  margin: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.login span {
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,57 @@
+.groupList {
+  position: relative;
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 40rem) {
+  .groupList {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.groupList h1 {
+  font-weight: 900;
+}
+
+.card {
+  background-color: var(--color-b);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2.5px 5px;
+  color: var(--color-a);
+  height: auto;
+  padding: 2rem;
+  position: relative;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  transition-property: transform, box-shadow;
+  width: 40vw;
+  height: 10vh;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.1);
+}
+
+@media (min-width: 40rem) {
+  .groupList {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .card {
+    width: 200px;
+    height: 100px;
+  }
+}

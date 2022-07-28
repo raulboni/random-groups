@@ -1,0 +1,62 @@
+.modal {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 40vw;
+  height: 40vh;
+  background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+.modal .card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2.5px 5px;
+  color: var(--color-b);
+  height: auto;
+  padding: 2rem;
+  position: relative;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  transition-property: transform, box-shadow;
+  min-width: 150px;
+}
+
+.modal button:first-of-type {
+  background-color: var(--color-d);
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 2.5px;
+  color: var(--color-c);
+  padding: 0.5rem 1rem;
+  transition: transform 150ms ease-in-out;
+  font-weight: 600;
+}
+.modal span {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.modal button {
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 2.5px;
+  color: var(--color-c);
+  padding: 0.5rem 1rem;
+  transition: transform 150ms ease-in-out;
+  font-weight: 600;
+}
+.modal button:first-of-type {
+  background-color: lightcoral;
+}
+
+.modal button:last-of-type {
+  background-color: lightseagreen;
+}
+.modal button:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2.5px 2.5px;
+  transform: scale(1.1);
+}

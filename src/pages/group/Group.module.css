@@ -1,0 +1,33 @@
+.group {
+  margin: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.group h1 {
+  margin-bottom: 2rem;
+}
+
+.group .btn-small {
+  background-color: var(--color-c);
+  padding: 3px 6px;
+  margin: 0 6px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 2.5px;
+  color: var(--color-d);
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+  transition-property: transform, box-shadow;
+}
+
+.group .btn-small:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2.5px 2.5px;
+  transform: scale(1.1);
+}
+
+.group .counter {
+  font-weight: 600;
+}

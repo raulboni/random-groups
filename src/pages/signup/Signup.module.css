@@ -1,0 +1,11 @@
+.signup {
+  margin: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.signup span {
+  margin-right: 0.5rem;
+}
