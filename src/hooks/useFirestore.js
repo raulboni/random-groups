@@ -46,7 +46,7 @@ const firestoreReducer = (state, action) => {
       return {
         isPending: false,
         document: null,
-        succedd: false,
+        success: false,
         error: action.payload,
       };
     default:
@@ -55,7 +55,6 @@ const firestoreReducer = (state, action) => {
 };
 
 export const useFirestore = (c, id) => {
-  const [document, setDocument] = useState("");
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
   let ref = collection(db, c);
   if (id) {

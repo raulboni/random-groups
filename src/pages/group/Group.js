@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { useFirestore } from "../../hooks/useFirestore";
+import { useDocument } from "../../hooks/useDocument";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
@@ -22,31 +23,16 @@ function shuffleAndChunk(array, chunkSize) {
 const Group = () => {
   const { id } = useParams();
   const { response, updateDocument } = useFirestore("groups", id);
+  const { title, setTitle, members, setMembers, error } = useDocument(
+    "groups",
+    id
+  );
+
   const [num, setNum] = useState(2); //number of members per random group
   const [randomGroup, setRandomGroup] = useState(false); //array of arrays random order
   const [isMembers, setIsMembers] = useState(); //if true shows list of members
-  const [title, setTitle] = useState(); //selected group title
   const [editMode, setEditMode] = useState(false); //if true shows delete btn and form to add members
-  const [members, setMembers] = useState(document);
   const [newMem, setNewMem] = useState("");
-
-  const _ref = doc(db, "groups", id);
-  const ref = useRef(_ref).current;
-
-  //Gets document firestore data and updates states(members, title) with data
-  useEffect(() => {
-    const unsub = async () => {
-      try {
-        const docSnap = await getDoc(ref);
-        setMembers(docSnap.data().members);
-        setTitle(docSnap.data().title);
-      } catch (err) {
-        console.warn(err);
-      }
-    };
-
-    return () => unsub();
-  }, [ref]);
 
   //Uses a custom hook to update document in a collection
   const handleUpdate = () => {
@@ -62,11 +48,10 @@ const Group = () => {
       return shuffleAndChunk(prevMem, num);
     });
   };
-
-  console.log(ref);
   return (
     <div className={styles.group}>
       {title && <h1>{title}</h1>}
+      {error && <p>{error}</p>}
 
       {isMembers && <MemberList members={members} setMembers={setMembers} />}
 
