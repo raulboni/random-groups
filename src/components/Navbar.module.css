@@ -28,7 +28,7 @@
   transition-property: transform;
 }
 
-.navbar p {
+.navbar .email {
   display: none;
 }
 

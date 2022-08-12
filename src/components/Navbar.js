@@ -15,7 +15,7 @@ const Navbar = () => {
       </Link>
 
       <span>
-        {user && <span>{user.email}</span>}
+        {user && <span className={styles.email}>{user.email}</span>}
         {user && <a onClick={() => logout()}>Logout</a>}
         {!user && (
           <Link to="/login">
